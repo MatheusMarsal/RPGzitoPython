@@ -1,3 +1,5 @@
-print('Olá mundo!')
+from nmrJogadores import nmrJogadores
 
-print('\n\nOlá git')
+maxJogadores = 3
+
+nmrPlayers = nmrJogadores(maxJogadores)
