@@ -1,9 +1,10 @@
 from nmrJogadores import nmrJogadores
 from nomePlayers import nomePlayers
 from definirSequencia import definirSequencia
-from almtrVtrPosicoes import almtrVtrPosicoes
+from almtrVtrs import almtrVtrs
+from escolhaPersonagem import escolhaPersonagem
 
-maxPlayers = 20  # Alterar somente via 'script' --> define a quantidade maxima de jogadores ( por conta de ter \n
+maxPlayers = 3  # Alterar somente via 'script' --> define a quantidade maxima de jogadores ( por conta de ter \n
 # personagens limitados no momento )
 
 
@@ -12,8 +13,11 @@ def main():
     nickName = []
     d20s = []
     pos = []
+    personagens = []
+    hp = []
 
-    almtrVtrPosicoes(players, pos)
+
+    almtrVtrs(players, pos, personagens, hp)
 
     nomePlayers(players, nickName, d20s)
 
@@ -29,5 +33,6 @@ def main():
 
         i += 1
 
+    escolhaPersonagem(players, nickName, pos, personagens, hp)
 
 main()
