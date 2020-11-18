@@ -3,10 +3,10 @@ from nomePlayers import nomePlayers
 from definirSequencia import definirSequencia
 from almtrVtrs import almtrVtrs
 from escolhaPersonagem import escolhaPersonagem
+from turnoBatalhas import turnoBatalhas
 
 maxPlayers = 3  # Alterar somente via 'script' --> define a quantidade maxima de jogadores ( por conta de ter \n
 # personagens limitados no momento )
-
 
 def main():
     players = nmrJogadores(maxPlayers)
@@ -34,5 +34,7 @@ def main():
         i += 1
 
     escolhaPersonagem(players, nickName, pos, personagens, hp)
+
+    turnoBatalhas(players, nickName, pos,personagens, hp)
 
 main()

@@ -1,11 +1,9 @@
-import dado from dado
-
-
+from dado import dado
 
 def personagens(person):
-     dano = 0
-     danoCritico = 0
-     i = 0
+    dano = 0
+    danoCritico = 0
+    i = 0
 
     if person == 1:
         dano = dado(6)

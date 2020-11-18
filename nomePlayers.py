@@ -1,7 +1,5 @@
 from dado import dado
 
-
-
 def nomePlayers(players, nicks, dado20):
 
     i = 1

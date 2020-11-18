@@ -1,6 +1,5 @@
 from listaPersonagens import listaPersonagens
 
-
 def escolhaPersonagem(players, nome, posicao, personagem, vida):
 
     listaPersonagens()

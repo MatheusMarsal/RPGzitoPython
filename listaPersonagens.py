@@ -1,6 +1,6 @@
 def listaPersonagens():
     # --> Arquerio
-    print("\nDigite 1 para escolher --> Arquerio")
+    print("\nDigite 1 para escolher --> Arqueiro")
     print("\tUtiliza D6,D10 para dar dano")
     print("\t\t1 = Erra (nao acerta o alvo)")
     print("\t\t3 = Perfura a armadura do alvo causando o dobro do dano(6)")
