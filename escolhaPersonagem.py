@@ -22,7 +22,7 @@ def escolhaPersonagem(players, nome, posicao, personagem, vida):
                         nRepetiu = False
 
                 if nRepetiu:
-                    print("\nEscolhido com sucesso!")
+                    print("\nEscolhido com sucesso!\n")
                     i += 1
                     nRepetiu = True
                 if i > (players - 1):
