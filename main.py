@@ -23,7 +23,10 @@ def main():
 
     definirSequencia(players, pos, d20s)
 
+
+    print()
     print("-=" * 10)
+    print()
 
     i = 0
 
