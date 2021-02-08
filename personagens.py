@@ -1,4 +1,5 @@
 from dado import dado
+import time
 
 def personagens(person):
     dano = 0
@@ -7,7 +8,7 @@ def personagens(person):
 
     if person == 1:
         dano = dado(6)
-        print("\nDado Arq {} :P\n".format(dano))
+        print("\nDado Arqueiro: {}\n".format(dano))
 
         if dano == 1:
             print("\nArqueiro, rapaz... Voce errou :P\n")
@@ -25,7 +26,7 @@ def personagens(person):
         if dano == 6:
             danoCritico = dado(10)
 
-            print("\nCritico Arq {} :P\n".format(danoCritico))
+            print("\nCritico Arqueiro: {}\n".format(danoCritico))
 
             if (danoCritico == 1) or (danoCritico == 10):
                 print("\nArqueiro, Voce quase acertou um critico mas algo de errado nao deu certo\n")
@@ -39,7 +40,8 @@ def personagens(person):
 
     if person == 2:
         dano = dado(6)
-        print("\nDado Mag {} :P\n".format(dano))
+
+        print("\nDado Mago: {} :P\n".format(dano))
 
         if dano == 3:
             print("\nMago, rapaz... Voce errou :P\n")
@@ -54,16 +56,15 @@ def personagens(person):
 
             dano = dano + danoCritico
 
-            print("\nPrimeiro critico Mag {} :P\n".format(danoCritico))
+            print("\nPrimeiro critico Mago: {}\n".format(danoCritico))
 
-            for i in range(1000000000):
-                continue
+            time.sleep(0.5)
 
             danoCritico = dado(6)
 
             dano = dano + danoCritico
 
-            print("\nSegundo critico Mag2 {} :P\n".format(danoCritico))
+            print("\nSegundo critico Mago: {}\n".format(danoCritico))
 
             print("\nMago, Voce canalizou uma magia poderoza!\n")
             print("Entao voce acertou {} de dano :D\n".format(dano))
@@ -73,7 +74,7 @@ def personagens(person):
     if person == 3:
         dano = dado(6)
 
-        print("\nDado Gue {} :P\n".format(dano))
+        print("\nDado Guerreiro {}:\n".format(dano))
 
         if dano == 3:
             print("\nGuerreiro, rapaz... Voce errou :P\n")
@@ -86,7 +87,7 @@ def personagens(person):
         if dano == 6:
             danoCritico = dado(12)
 
-            print("\nCritico Gue {} :P\n".format(danoCritico))
+            print("\nCritico Guerreiro: {}\n".format(danoCritico))
 
             dano = dano + danoCritico
 

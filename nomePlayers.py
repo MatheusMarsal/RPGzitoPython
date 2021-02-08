@@ -1,4 +1,5 @@
 from dado import dado
+from turnoBatalhas import pause
 
 def nomePlayers(players, nicks, dado20):
 
@@ -26,8 +27,17 @@ def nomePlayers(players, nicks, dado20):
 
     i = 0
 
+    print()
+    print("-=" * 15 + "-")
+    print("\nLista de jogadores e seus respectivos d20: \n")
+
     while (i < players):
-        print(nicks[i], end='::')
+        print(nicks[i], end=' :: ')
         print(dado20[i])
 
         i += 1
+
+    pause()
+    print()
+    print("-=" * 15 + "-")
+    print("\nSequencia de jogadores baseados no d20: \n")

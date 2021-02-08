@@ -1,5 +1,36 @@
 from dado import dado
 from personagens import personagens
+import random
+
+def pause():
+    input("\nPressione enter para continuar...\n")
+
+def sortCriaturas():
+    mobs = ["goblin", "aranha grande", "ratão de buero", "lobo selvagem", "gato com faca nas coxtaz", "Serpente", "lagarto", "javali", "slime"]
+    mobsSorter = random.choice(strs)
+    return mobsSorter
+
+
+def hpBar(hp):
+    red = "\033[1;31m"
+    green = "\033[1;32m"
+    grey = "\033[1;90m"
+    blue = "\033[1;94m"
+    reset = "\033[0;0m"
+
+    print(grey + "[", end='')
+    for i in range(50):
+        if i < hp:
+            print(green + "+", end='')
+        else:
+            print(red + "-", end='')
+
+    print(grey + "]", blue + "-->", end='')
+
+    if hp > 0:
+        print(green, hp, reset)
+    else:
+        print(red, "Faleceu!", reset)
 
 def turnoBatalhas(players, nome, listaColocado, pers, life):
     posAtacante = 0
@@ -30,10 +61,9 @@ def turnoBatalhas(players, nome, listaColocado, pers, life):
         if mortos == (players - 1):
             for i in range(players):
                 if vivo[i]:
-                    print("\n{} -> play!" .format(players))
-                    print("\n{} -> mortos!" .format(mortos))
-                    print("\n{}, voce sobreviveu a toda batalha".format(nome[listaColocado[i]]))
-                    print("\nCom {} de HP" .format(life[i]))
+                    print("\n\n{}, voce sobreviveu a toda batalha".format(nome[listaColocado[i]]))
+                    print("\n{} seu HP atual: ".format(nome[listaColocado[i]]), end='')
+                    hpBar(life[i])
                     print("\nDano causado na partida: {}" .format(dano[i]))
                     print("\nPARABENS!\n\n")
 
@@ -52,14 +82,19 @@ def turnoBatalhas(players, nome, listaColocado, pers, life):
                     if posOponente < 0:
                         posOponente = players - 1
 
+
+
                 print("\n{}, voce vai atacar {}, pela esquerda!".format(nome[listaColocado[posAtacante]], nome[listaColocado[posOponente]]))
+                pause()
 
                 pivoDano = personagens(pers[posAtacante])
 
                 dano[posAtacante] += pivoDano
                 life[posOponente] -= pivoDano
 
-                print("\n{} seu HP atual: {}".format(nome[listaColocado[posOponente]], life[posOponente]))
+                print("\n{} seu HP atual: ".format(nome[listaColocado[posOponente]]), end='')
+                hpBar(life[posOponente])
+                pause()
 
 
 
@@ -71,7 +106,9 @@ def turnoBatalhas(players, nome, listaColocado, pers, life):
                         posOponente = 0
 
 
+
                 print("\n{}, voce vai atacar {}, pela direita!\n".format(nome[listaColocado[posAtacante]], nome[listaColocado[posOponente]]))
+                pause()
 
 
                 pivoDano = personagens(pers[posAtacante])
@@ -79,7 +116,9 @@ def turnoBatalhas(players, nome, listaColocado, pers, life):
                 dano[posAtacante] += pivoDano
                 life[posOponente] -= pivoDano
 
-                print("\n{} seu HP atual: {}".format(nome[listaColocado[posOponente]], life[posOponente]))
+                print("\n{} seu HP atual: ".format(nome[listaColocado[posOponente]]), end='')
+                hpBar(life[posOponente])
+                pause()
 
         posAtacante += 1
 

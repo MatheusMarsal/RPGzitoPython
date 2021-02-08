@@ -7,7 +7,6 @@ def definirSequencia(players, pos1, d20):
     maior = 0
 
 
-
     for i in range(players):
         pivod20.append(d20[i])
         pos2.append(i)
