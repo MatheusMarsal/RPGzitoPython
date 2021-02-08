@@ -1,14 +1,15 @@
 from dado import dado
 from personagens import personagens
+from clear import clear
 import random
 
 def pause():
     input("\nPressione enter para continuar...\n")
 
-def sortCriaturas():
+def randMob():
     mobs = ["goblin", "aranha grande", "ratão de buero", "lobo selvagem", "gato com faca nas coxtaz", "Serpente", "lagarto", "javali", "slime"]
-    mobsSorter = random.choice(strs)
-    return mobsSorter
+    mob = random.choice(mobs)
+    return mob
 
 
 def hpBar(hp):
@@ -40,6 +41,7 @@ def turnoBatalhas(players, nome, listaColocado, pers, life):
     mortos = 0
     dano = []
     pivoDano = 0
+	
 
     for i in range(players):
         vivo.append(1)
@@ -49,6 +51,7 @@ def turnoBatalhas(players, nome, listaColocado, pers, life):
 
     for i in range(players):
         dano.append(0)
+
 
     while mortos != (players - 1):
         for i in range(players):
@@ -94,7 +97,10 @@ def turnoBatalhas(players, nome, listaColocado, pers, life):
 
                 print("\n{} seu HP atual: ".format(nome[listaColocado[posOponente]]), end='')
                 hpBar(life[posOponente])
+
                 pause()
+
+                clear()
 
 
 
@@ -118,7 +124,10 @@ def turnoBatalhas(players, nome, listaColocado, pers, life):
 
                 print("\n{} seu HP atual: ".format(nome[listaColocado[posOponente]]), end='')
                 hpBar(life[posOponente])
+
                 pause()
+				
+                clear()
 
         posAtacante += 1
 

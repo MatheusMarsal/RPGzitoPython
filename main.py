@@ -4,6 +4,9 @@ from definirSequencia import definirSequencia
 from almtrVtrs import almtrVtrs
 from escolhaPersonagem import escolhaPersonagem
 from turnoBatalhas import turnoBatalhas, pause
+from clear import clear
+from loading import loading
+
 
 maxPlayers = 3  # Alterar somente via 'script' --> define a quantidade maxima de jogadores ( por conta de ter \n
 # personagens limitados no momento )
@@ -37,7 +40,15 @@ def main():
 
     pause()
 
+    clear()
+
     escolhaPersonagem(players, nickName, pos, personagens, hp)
+
+    pause()
+
+    clear()
+	
+    loading()
 
     turnoBatalhas(players, nickName, pos,personagens, hp)
 
