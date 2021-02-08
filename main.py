@@ -26,7 +26,7 @@ def main():
     i = 0
 
     while i < players:
-        print(nickName[pos[i]], end='seu d20 caiu em --> ')
+        print(nickName[pos[i]], end=' seu d20 caiu em --> ')
         print(d20s[pos[i]])
 
         i += 1
