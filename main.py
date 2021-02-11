@@ -34,6 +34,8 @@ def main():
 
         i += 1
 
+    clear()
+
     print()
     print("-=" * 15 + "-")
     print()
