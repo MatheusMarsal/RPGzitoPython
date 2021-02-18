@@ -6,10 +6,21 @@ import random
 def pause():
     input("\nPressione enter para continuar...\n")
 
-def randMob():
+def randMob(players, nomes, listaColocado, personagem, vida):
     mobs = ["goblin", "aranha grande", "ratão de buero", "lobo selvagem", "gato com faca nas coxtaz", "Serpente", "lagarto", "javali", "slime"]
-    mob = random.choice(mobs)
-    return mob
+
+    j = players
+
+    for i in range(players, 0 , -1):
+        listaColocado.insert(i, j)
+        j += 1
+
+        personagem.append(0)
+        vida.append(dado(10))
+
+    for count in range((players), 0, -1):
+        mob = random.choice(mobs)
+        nomes.append(mob)
 
 
 def hpBar(hp):
@@ -43,15 +54,18 @@ def turnoBatalhas(players, nome, listaColocado, pers, life):
     pivoDano = 0
 	
 
-    for i in range(players):
+    for i in range(players * 2):
         vivo.append(1)
 
     for i in range(players):
         life[i] = 50
 
-    for i in range(players):
+    for i in range(players * 2):
         dano.append(0)
 
+    players = players * 2
+
+    randMob(players, nome, listaColocado, pers, life)
 
     while mortos != (players - 1):
         for i in range(players):

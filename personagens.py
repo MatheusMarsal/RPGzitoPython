@@ -4,10 +4,22 @@ import time
 def personagens(person):
     dano = 0
     danoCritico = 0
-    i = 0
+
+    if person == 0:
+        dano = dado(6)
+		
+        print("\nDado mob: {}\n".format(dano))
+
+        if (dano % 2 != 0):
+            print("\nMob acertou {} de dano!\n".format(dano))
+            return dano
+        else:
+            print("\nO golpe do mob foi tão fraquinho, que não causou dano!\n")
+            return 0
 
     if person == 1:
         dano = dado(6)
+
         print("\nDado Arqueiro: {}\n".format(dano))
 
         if dano == 1:
@@ -41,7 +53,7 @@ def personagens(person):
     if person == 2:
         dano = dado(6)
 
-        print("\nDado Mago: {} :P\n".format(dano))
+        print("\nDado Mago: {}\n".format(dano))
 
         if dano == 3:
             print("\nMago, rapaz... Voce errou :P\n")
