@@ -6,22 +6,22 @@ import random
 def pause():
     input("\nPressione enter para continuar...\n")
 
-def randMob(players, nomes, listaColocado, personagem, vida):
+def randMob(players, nomes, listaColocados, personagem, vida):
     mobs = ["goblin", "aranha grande", "ratão de buero", "lobo selvagem", "gato com faca nas coxtaz", "Serpente", "lagarto", "javali", "slime"]
 
     j = players
 
+
     for i in range(players, 0 , -1):
-        listaColocado.insert(i, j)
+        listaColocados.insert(i, j)
+        personagem.insert(i, 0)
+        vida.insert(i,(dado(10)))
         j += 1
 
-        personagem.append(0)
-        vida.append(dado(10))
 
-    for count in range((players), 0, -1):
+    for count in range(players, 0, -1):
         mob = random.choice(mobs)
         nomes.append(mob)
-
 
 def hpBar(hp):
     red = "\033[1;31m"
@@ -44,6 +44,14 @@ def hpBar(hp):
     else:
         print(red, "Faleceu!", reset)
 
+def participantes(players, nomes, listaColocados, life):
+    for i in range(players):
+        print("\n{} seu HP atual: ".format(nomes[listaColocados[i]]), end='')
+        hpBar(life[i])
+
+    pause()
+    clear()
+
 def turnoBatalhas(players, nome, listaColocado, pers, life):
     posAtacante = 0
     posOponente = 0
@@ -63,9 +71,11 @@ def turnoBatalhas(players, nome, listaColocado, pers, life):
     for i in range(players * 2):
         dano.append(0)
 
+    randMob(players, nome, listaColocado, pers, life)
+
     players = players * 2
 
-    randMob(players, nome, listaColocado, pers, life)
+    participantes(players, nome, listaColocado, life)
 
     while mortos != (players - 1):
         for i in range(players):
@@ -98,7 +108,6 @@ def turnoBatalhas(players, nome, listaColocado, pers, life):
 
                     if posOponente < 0:
                         posOponente = players - 1
-
 
 
                 print("\n{}, voce vai atacar {}, pela esquerda!".format(nome[listaColocado[posAtacante]], nome[listaColocado[posOponente]]))
